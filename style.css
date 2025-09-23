@@ -4,7 +4,7 @@ article
 }
 aside 
 {
-    padding-left: 10px;
+
     width: 230px;
     float: left;
     
@@ -27,7 +27,7 @@ hr
 img
 {
     border-radius: 10px;
-    
+    float: right;
 }
 .contact
 {
@@ -75,4 +75,8 @@ a.button {
 .index
 {
     padding-left: 250px;
+}
+.portrait
+{
+    width:80px;
 }
