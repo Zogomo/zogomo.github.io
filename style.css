@@ -68,7 +68,6 @@ a.button {
 {
     margin-left: 100px;
     margin-right: 100px;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
     height: 1500px;
     background-color: #ffffff;
 }
@@ -78,5 +77,6 @@ a.button {
 }
 .portrait
 {
-    width:80px;
+    width:100px;
+    border-radius: 20px;
 }
