@@ -34,7 +34,7 @@ function gameStart(){
     createFood();
     drawFood();
     nextTick();
-};
+}
 function nextTick(){
     if(running){
         setTimeout(()=>{
@@ -44,16 +44,16 @@ function nextTick(){
             drawSnake();
             checkGameOver();
             nextTick();
-        }, 75);
+        }, 100);
     }
     else{
         displayGameOver();
     }
-};
+}
 function clearBoard(){
     ctx.fillStyle = boardBackground;
     ctx.fillRect(0,0,gameWidth,gameHeight);
-};
+}
 function createFood(){
     function randomFood(min, max)
     {
@@ -62,11 +62,11 @@ function createFood(){
     }
     foodX = randomFood(0, gameWidth - unitSize);
     foodY = randomFood(0, gameHeight - unitSize);
-};
+}
 function drawFood(){
     ctx.fillStyle = foodColor;
     ctx.fillRect(foodX, foodY, unitSize, unitSize);
-};
+}
 function moveSnake(){
     const head = {x: snake[0].x + xVelocity,
                  y: snake[0].y + yVelocity};
@@ -78,18 +78,16 @@ function moveSnake(){
     }else{
         snake.pop();
     }
-};
-function drawSnake()
-{
+}
+function drawSnake(){
     ctx.fillStyle = snakeColor;
     ctx.strokeStyle = snakeBorder;
     snake.forEach(snakePart => {
         ctx.fillRect(snakePart.x, snakePart.y, unitSize, unitSize);
         ctx.strokeRect(snakePart.x, snakePart.y, unitSize, unitSize);
-    })
-};
-function changeDirection(event)
-{
+    });
+}
+function changeDirection(event){
     const keyPressed = event.keyCode;
     const left = 37;
     const right = 39;
@@ -120,7 +118,7 @@ function changeDirection(event)
                 yVelocity = unitSize;
             break;
     }
-};
+}
 function checkGameOver(){
     switch(true)
     {
@@ -142,14 +140,14 @@ function checkGameOver(){
             running = false;
         }
     }
-};
+}
 function displayGameOver(){
     ctx.font = "50px Comic Sans";
     ctx.fillStyle = "black";
     ctx.textAlign = "center";
     ctx.fillText("Game Over", gameWidth/2, gameHeight/2);
     running = false;
-};
+}
 function resetGame(){
     score = 0;
     xVelocity = unitSize;
@@ -161,4 +159,4 @@ function resetGame(){
             {x:0, y:0},
             ];
     gameStart();
-};
+}
